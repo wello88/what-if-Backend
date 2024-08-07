@@ -4,6 +4,8 @@ import StoryChunk from "../../../db/models/storyChunk.js";
 import { Category } from "../../../db/models/category.model.js";
 import { AppError as CustomError } from "../../utils/AppError.js";
 import getChatHistory from "../../utils/getChatHistory.js";
+import { Player } from "../../../db/models/player.model.js";
+import { Club } from "../../../db/models/club.model.js";
 /**
  * @param {import('express').Request} req - Express request object
  * @param {import('express').Response} res - Express response object
