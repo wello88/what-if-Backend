@@ -34,23 +34,10 @@ export const createStory = async (req, res) => {
 export const getQuestions = async (req, res) => {
   // const storyId = req.body.storyId;
   // if (!storyId) throw new CustomError("Story id must be provided", 400);
+try{
+   const { name } = req.body;
+  if (!name) throw new CustomError("Name must be provided", 400);
 
-  const { id , type } = req.body;
-  if (!id || !type) throw new CustomError("Category id must be provided", 400);
-
-  try {
-    let entity;
-    if (type === "player") {
-      entity = await Player.findById(id).populate('category');
-    } else if (type === "club") {
-      entity = await Club.findById(id).populate('category');
-    } else {
-      throw new CustomError("Invalid type provided", 400);
-    }
-        if (!entity) throw new CustomError(`${type.charAt(0).toUpperCase() + type.slice(1)} not found`, 404);
-
-    const category = entity.category;
-    if (!category) throw new CustomError("Category not found", 404);
 
     // const previousChat = getChatHistory(story.chunks);
 
