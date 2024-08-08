@@ -32,18 +32,19 @@ export const createStory = async (req, res) => {
 };
 
 export const getQuestions = async (req, res) => {
-  // const storyId = req.body.storyId;
-  // if (!storyId) throw new CustomError("Story id must be provided", 400);
 try{
    const { name } = req.body;
+   const { language } = req.query;
   if (!name) throw new CustomError("Name must be provided", 400);
-
+  if (!language) throw new CustomError("Language must be provided", 400);
 
     // const previousChat = getChatHistory(story.chunks);
-
+    
     //Configure model
     const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+    
     const model = genAI.getGenerativeModel({
+      
       model: "gemini-1.5-flash",
       systemInstruction: `
       You're the host of a game called "What if" you will provide 7  related questions that can be aswered with "YES" or "No", the questions will be  about specific topic assuming things that 
@@ -51,6 +52,7 @@ try{
       to be related to each other to build a story, 
       , That's your only jop and 
       you're not allowed to respond with anything else .
+      according to this language ${language}.
       and your response should be in array format like the following example : ["question 1","question 2", ....]
       `,
     });
@@ -119,7 +121,8 @@ export const getStory = async (req, res) => {
 //Finish Story
 
 export const finishStory = async (req, res) => {
-  const { questions } = req.body;
+  const { questions} = req.body;
+  const {language} = req.query;
   if (!questions || !Array.isArray(questions))
     throw new CustomError("Questions must be provided");
   try {
@@ -129,11 +132,11 @@ export const finishStory = async (req, res) => {
       model: "gemini-1.5-flash",
       systemInstruction: `
       You're the host of a game called "What if" i will provide you with questions and answers that asuumes 
-      things that never happend in real life , all the questions will be related to each other in a specific context,
+      things that never happend in real life , all the questions will be related to each other in a specific context ,
       you're responsible of imagining and building a deceent , good structured story based on those questions and answers
-      the questions : ${JSON.stringify(
-        questions
-      )} , your response should straight forward start with the story
+      the questions : ${JSON.stringify(questions)}.
+      make responses in language ${language},
+      your response should straight forward start with the story.
       `,
     });
 
