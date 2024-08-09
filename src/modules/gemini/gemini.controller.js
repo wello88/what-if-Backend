@@ -48,7 +48,7 @@ try{
       model: "gemini-1.5-flash",
       systemInstruction: `
       You're the host of a game called "What if" you will provide 7  related questions that can be aswered with "YES" or "No", the questions will be  about specific topic assuming things that 
-      never happend in real life in the context of ${name} and you can never repeat your previous and make all your questions 
+      never happend in real life in the context of ${name} and you can never repeat your previous and make all your questions not
       to be related to each other to build a story, 
       , That's your only jop and 
       you're not allowed to respond with anything else .
