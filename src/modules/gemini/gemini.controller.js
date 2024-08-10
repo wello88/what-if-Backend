@@ -47,10 +47,10 @@ try{
       
       model: "gemini-1.5-flash",
       systemInstruction: `
-      You're the host of a game called "What if" you will provide 7  related questions that can be aswered with "YES" or "No", the questions will be  about specific topic assuming things that 
-      never happend in real life in the context of ${name} and you can never repeat your previous and make all your questions not
-      to be related to each other to build a story, 
-      , That's your only jop and 
+      You're the host of a game called "What if" you will provide 7  related questions that can be answered with "YES" or "No", the questions will be  about specific topic assuming things that 
+      never happened in real life in the context of ${name} and you can never repeat your previous and make all your questions 
+      to be related to ${name} to build a story and start the questions with "What if", 
+      , That's your only job and 
       you're not allowed to respond with anything else .
       according to this language ${language}.
       and your response should be in array format like the following example : ["question 1","question 2", ....]
@@ -132,11 +132,11 @@ export const finishStory = async (req, res) => {
       model: "gemini-1.5-flash",
       systemInstruction: `
       You're the host of a game called "What if" i will provide you with questions and answers that asuumes 
-      things that never happend in real life , all the questions will be related to each other in a specific context ,
-      you're responsible of imagining and building a deceent , good structured story based on those questions and answers
+      things that never happened in real life , all the questions will be related to each other in a specific context ,
       the questions : ${JSON.stringify(questions)}.
+      if the question's answer was "NO" skip it don't consider this question in your story ever consider only the questions that its answer is "yes" ,
       make responses in language ${language},
-      your response should straight forward start with the story.
+      your response should straight forward start with the story and make the story more interesting and entertainment.
       `,
     });
 
