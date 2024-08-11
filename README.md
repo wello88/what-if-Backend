@@ -22,3 +22,55 @@ This project uses the following major dependencies:
 
 - **The Movie Database (TMDb) API**: Used to fetch movie details and other related data. [TMDb API Documentation](https://api.themoviedb.org)
 - **Kaggle Dataset**: Used to retrieve and manage player and club data.
+
+## Contributors
+
+Thanks to these wonderful people who have contributed to this project:
+- **[Fady Nabil](https://github.com/FadyBoj)** - Back-end Developer
+- **[Abd ElRahman Walid](https://github.com/wello88)** - Back-end Developer
+- **[Omer Mostafa](https://github.com/omerbag-9)** - Back-end Developer
+- **[Yousef Fadel](https://github.com/YousefMohamed19)** - Flutter Developer
+
+## How to Run This Project on Your PC
+
+To run the **What If** backend project on your PC, follow these steps:
+
+### Prerequisites
+
+Ensure that you have the following software installed:
+
+- **Node.js:** Download and install it from [nodejs.org](https://nodejs.org/).
+- **MongoDB:** Install MongoDB from [mongodb.com](https://www.mongodb.com/).
+- **Git:** If you haven't already, install Git from [git-scm.com](https://git-scm.com/).
+
+### Steps
+
+1. **Clone the Repository**
+
+   First, clone the repository to your local machine:
+   
+   ```bash
+   git clone https://github.com/your-username/what_if_backend.git
+   cd what_if_backend
+### Set Up Environment Variables
+
+Create a `.env` file in the root directory and add the necessary environment variables. Here’s an example:
+
+```makefile
+TMDB_API_KEY=your_tmdb_api_key
+MONGO_URI=your_mongodb_connection_string
+GEMINI_API_KEY=your_gemini_api_key
+
+### Install Dependencies
+
+Navigate to the project directory and install the necessary dependencies:
+
+```bash
+npm install
+
+### Run the Project
+
+Start the server using the following command:
+
+```bash
+npm start
