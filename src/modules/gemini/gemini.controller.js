@@ -131,13 +131,17 @@ export const finishStory = async (req, res) => {
     const model = genAI.getGenerativeModel({
       model: "gemini-1.5-flash",
       systemInstruction: `
-      You're the host of a game called "What if" i will provide you with questions and answers that asuumes 
-      things that never happened in real life , all the questions will be related to each other in a specific context ,
+      You're the host of a game called "What if" this game give user some question about football or movies, i will provide you with questions and answers that asuumes
+      things that never happened in real life and i want you to create imagination story if this events happened in real life or in the movie , all the questions will be related to each other in a specific context ,
       the questions : ${JSON.stringify(questions)}.
-      if the question's answer was "NO" skip it don't consider this question in your story ever consider only the questions that its answer is "yes" ,
+      if the question's answer was "NO" in this case the user dousn't need this event happening in the story and "YES" he need this event.
       make responses in language ${language},
       your response should straight forward start with the story and make the story more interesting and entertainment.
-      `,
+      if the story about football :
+      i want you to mention more information from your imagination like ( Number of goals, new recored, number of clean sheat, champions, another clubs, history etc...) , and how this changes will change her history.
+      if ths story about movie:
+      i want you to mention the new end for the movie with some new details in the story (some times make it happy end and some times make it sad end) 
+      make the story in 3000 characters`,
     });
 
     const chat = model.startChat({ history: [] });
