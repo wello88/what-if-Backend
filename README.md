@@ -73,4 +73,4 @@ Thanks to these wonderful people who have contributed to this project:
 - **[Fady Nabil](https://github.com/FadyBoj)** - Back-end Developer
 - **[Abd ElRahman Walid](https://github.com/wello88)** - Back-end Developer
 - **[Omer Mostafa](https://github.com/omerbag-9)** - Back-end Developer
-- **[Yousef Fadel](https://github.com/YousefMohamed19)** - Flutter Developer
+- **[Yousef Fadel](https://github.com/YousefMohamed19)** - Back-end Developer
