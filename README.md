@@ -23,14 +23,6 @@ This project uses the following major dependencies:
 - **The Movie Database (TMDb) API**: Used to fetch movie details and other related data. [TMDb API Documentation](https://api.themoviedb.org)
 - **Kaggle Dataset**: Used to retrieve and manage player and club data.
 
-## Contributors
-
-Thanks to these wonderful people who have contributed to this project:
-- **[Fady Nabil](https://github.com/FadyBoj)** - Back-end Developer
-- **[Abd ElRahman Walid](https://github.com/wello88)** - Back-end Developer
-- **[Omer Mostafa](https://github.com/omerbag-9)** - Back-end Developer
-- **[Yousef Fadel](https://github.com/YousefMohamed19)** - Flutter Developer
-
 ## How to Run This Project on Your PC
 
 To run the **What If** backend project on your PC, follow these steps:
@@ -57,20 +49,28 @@ Ensure that you have the following software installed:
 Create a `.env` file in the root directory and add the necessary environment variables. Here’s an example:
 
 ```makefile
-TMDB_API_KEY=your_tmdb_api_key
-MONGO_URI=your_mongodb_connection_string
-GEMINI_API_KEY=your_gemini_api_key
-
+   TMDB_API_KEY=your_tmdb_api_key
+   MONGO_URI=your_mongodb_connection_string
+   GEMINI_API_KEY=your_gemini_api_key
+```
 ### Install Dependencies
 
 Navigate to the project directory and install the necessary dependencies:
 
 ```bash
 npm install
-
+```
 ### Run the Project
 
 Start the server using the following command:
 
 ```bash
 npm start
+```
+## Contributors
+
+Thanks to these wonderful people who have contributed to this project:
+- **[Fady Nabil](https://github.com/FadyBoj)** - Back-end Developer
+- **[Abd ElRahman Walid](https://github.com/wello88)** - Back-end Developer
+- **[Omer Mostafa](https://github.com/omerbag-9)** - Back-end Developer
+- **[Yousef Fadel](https://github.com/YousefMohamed19)** - Flutter Developer
